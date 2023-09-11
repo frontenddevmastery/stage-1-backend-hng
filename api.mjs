@@ -1,7 +1,9 @@
 import express from 'express'
 import bp from 'body-parser'
 import morgan from 'morgan'
+import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express()
 
 app.use(bp.urlencoded({extended: true}))
