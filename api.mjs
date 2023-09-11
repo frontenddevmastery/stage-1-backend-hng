@@ -45,7 +45,7 @@ const switchDay = (dayInNum) => {
 app.get('/api', (req, res) => {
     const time = new Date()
     if (req.query.slack_name && req.query.track) {
-        let info = {slack_name: req.query.slack_name, current_day: switchDay(time.getDay()), utc_time: time.toISOString(), track: req.query.track, github_file_url: '', github_repo_url: 'https://github.com/frontenddevmastery/stage-1-backend-hng', status_code: res.statusCode}
+        let info = {slack_name: req.query.slack_name, current_day: switchDay(time.getDay()), utc_time: time.toISOString(), track: req.query.track, github_file_url: 'https://stage-1-backend-hng.onrender.com', github_repo_url: 'https://github.com/frontenddevmastery/stage-1-backend-hng', status_code: res.statusCode}
         db.push(info)
     }
     res.json(db)
